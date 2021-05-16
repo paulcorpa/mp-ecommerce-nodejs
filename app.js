@@ -80,10 +80,10 @@ app.get('/detail', async function (req, res) {
     console.log(req.query);
     const {img,title,price,unit} = req.query;
     const item={
-        id:'1234',
+        id: 1234,
         title:title,
         description: 'Dispositivo móvil de Tienda e-commerce',
-        picture_url: img,
+        picture_url: req.get("host") + img.substr(1),
         quantity: +unit,
         currency_id:'PEN',
         unit_price: +price,
