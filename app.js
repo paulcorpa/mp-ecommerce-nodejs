@@ -84,6 +84,7 @@ app.get('/detail', async function (req, res) {
     preferencia.back_urls.failure= `${req.get('host')}/failure`;
     preferencia.back_urls.success= `${req.get('host')}/success`;
     preferencia.back_urls.pending= `${req.get('host')}/pending`;
+    preferencia.notification_url= `${req.get('host')}/notificaciones`;
     //preferencia.back_urls.failure= `${req.get('host')}/notificaciones`;
     const respuesta = await mercadopago.preferences.create(preferencia);
     console.log(respuesta);
@@ -103,5 +104,15 @@ app.get("/failure",function(req,res){
 
 app.get("/pending",function(req,res){
     res.render("pending",req.query);
+});
+
+app.post("/notificaciones" ,function(req,res){
+    console.log("INICIO DE NOTIFICACIONES");
+    console.log("MEDIANTE LA QUERY PARAMS");
+    console.log(req.query);
+    console.log("MEDIANTE EL BODY");
+    console.log(req.body);
+
+    res.status(200);
 });
 app.listen(port);
