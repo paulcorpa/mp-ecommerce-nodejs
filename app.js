@@ -23,7 +23,7 @@ const cliente = {
     surname: "Landa",
     email: 'test_user_46542185@testuser.com',
     phone: {
-        numer: 5549737300,
+        number: 5549737300,
         area_code: '52'
     },
     address:{
