@@ -31,7 +31,7 @@ const cliente = {
         street_name: 'Insurgentes Sur',
         street_number: 1602,
     },
-    identificaton:{
+    identification:{
         type:'DNI',
         number: '22334445',
     },
